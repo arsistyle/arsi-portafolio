@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// DATA
+import { MENU } from './data/Menu';
 
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Router>
+        <Header logo={props.logo} menu={MENU}></Header>
+        <Switch>
+          {MENU.map((item, index) => {
+            const Page = item.component;
+            return <Route exact path={item.url} key={index} component={Page} />;
+          })}
+        </Switch>
+      </Router>
+      <Footer />
+    </main>
   );
 }
 
