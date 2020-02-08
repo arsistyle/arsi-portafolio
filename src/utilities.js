@@ -1,8 +1,12 @@
 import React from 'react';
 
-export function ParseHTML(props) {
-  let _props = props.length > 1 ? Object.keys(props).map(x => x !== 'html') : null;
+export function HTML(props) {
+  let _props = {...props};
+  delete _props.html;
   return (
-    <div dangerouslySetInnerHTML={{ __html: props.html }} {..._props}></div>
+    <div
+      dangerouslySetInnerHTML={{ __html: props.html }}
+      {..._props}
+    ></div>
   );
 }

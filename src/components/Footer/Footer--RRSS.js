@@ -1,5 +1,5 @@
 import React from 'react';
-import { ParseHTML } from '../../utilities';
+import { HTML } from '../../utilities';
 
 function RRSS(props) {
   return (
@@ -13,7 +13,7 @@ function RRSS(props) {
           rel="noopener noreferrer"
           key={key}
         >
-          <ParseHTML html={red.icon}/>
+          <HTML html={red.icon} className="ass" cacaa="asdsad"/>
         </a>
       ))}
     </div>
