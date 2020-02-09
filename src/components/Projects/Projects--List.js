@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
-import ProjectItem from './Projects--Item';
+// import ProjectItem from './Projects--Item';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
 
@@ -23,14 +23,6 @@ function ProjectList(props) {
               >
                 <h3>{ReactHtmlParser(item.title.rendered)}</h3>
                 <img src={item.fimg_url[0]} alt=""/>
-                {
-                  // <Image
-                  //   cloudName="arsi"
-                  //   publicId={`portafolio/${item.slug}`}
-                  //   width="300"
-                  //   crop="scale"
-                  // />
-                }
               </Link>
             ))}
             {/* <Route path="/proyectos/:id" component={ProjectItem} /> */}
