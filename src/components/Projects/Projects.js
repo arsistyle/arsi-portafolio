@@ -1,9 +1,10 @@
 import React from 'react';
+import ProjectsList from './Projects--List';
 
 function Projects(props) {
   return (
     <section>
-      <h1>Soy proyectos</h1>
+      <ProjectsList />
     </section>
   );
 }

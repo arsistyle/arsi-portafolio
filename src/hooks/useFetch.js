@@ -9,10 +9,9 @@ const useFetch = url => {
     setData(data);
     setLoading(false);
   };
-
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   return { loading, data };
 };
