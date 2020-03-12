@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Hero as DataHero } from '../../Data';
 
@@ -17,9 +18,9 @@ const Hero = () => {
             <h2 className="hero__job">{DataHero.job}</h2>
             <div className="btn__grupo">
               {DataHero.btns.map((x, i) => (
-                <a {...x.props} key={i}>
+                <Link {...x.props} key={i}>
                   {x.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

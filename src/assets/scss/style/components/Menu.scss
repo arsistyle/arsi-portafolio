@@ -1,0 +1,14 @@
+@import '../style.scss';
+
+.menu {
+    display: flex;
+    &__link {
+        font-size: 1.7rem;
+        text-decoration: none;
+        padding: 1rem;
+        color: var(--secundario);
+        &--active {
+            color: var(--primario);
+        }
+    }
+}
