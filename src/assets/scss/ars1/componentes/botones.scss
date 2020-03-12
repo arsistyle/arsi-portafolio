@@ -7,7 +7,7 @@
     cursor: pointer;
     display: inline-block;
     font-size: 1.6rem;
-    font-weight: normal;
+    font-weight: 300;
     line-height: 1;
     padding: 1.5rem 3rem;
     text-align: center;
@@ -129,8 +129,7 @@
       }
       // border: 1px dashed ennegrecer($default, 30%);
     }
-    &:active,
-    &:visited {
+    &:active {
       @include estado-btn(ennegrecer($default, 10%), ennegrecer($default, 10%));
       @if map-deep-get($_CONFIG, 'ui', 'sombras', 'activo') {
         box-shadow:
@@ -185,8 +184,7 @@
           rgba(blanco(1), map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'focus', 'opacity'));
         }
       }
-      &:active,
-      &:visited {
+      &:active {
         @include estado-btn(rgba(blanco(1), .15), null);
         @if map-deep-get($_CONFIG, 'ui', 'sombras', 'activo') {
           box-shadow: none;
@@ -215,8 +213,7 @@
           rgba($default, map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'focus', 'opacity'));
         }
       }
-      &:active,
-      &:visited{
+      &:active{
         //@include estado-btn(ennegrecer($default, 10%), ennegrecer($default, 10%));
         background: rgba($default, .15);
         @if map-deep-get($_CONFIG, 'ui', 'sombras', 'activo') {
@@ -258,8 +255,7 @@
           rgba($default, map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'focus', 'opacity'));
         }
       }
-      &:active,
-      &:visited {
+      &:active {
         background: rgba(gris(70), .1);
         border-color: transparent;
         @if map-deep-get($_CONFIG, 'ui', 'sombras', 'activo') {
@@ -318,8 +314,7 @@
             rgba($var, map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'focus', 'opacity') + .3);
           }
         }
-        &:active,
-        &:visited {
+        &:active {
           @include estado-btn(ennegrecer($var, 10%), ennegrecer($var, 10%));
           @if map-deep-get($_CONFIG, 'ui', 'sombras', 'activo') {
             box-shadow:
@@ -367,8 +362,7 @@
               rgba($var, map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'focus', 'opacity') + .3);
             }
           }
-          &:active,
-          &:visited {
+          &:active {
             // background: ennegrecer($var, 10%);
             // border-color: ennegrecer($var, 10%);
             // box-shadow: 0 2px 5px rgba($var, .3);
@@ -413,8 +407,7 @@
               rgba($var, map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'focus', 'opacity') + .3);
             }
           }
-          &:active,
-          &:visited {
+          &:active {
             background: rgba($var, .1);
           }
         }
@@ -459,6 +452,10 @@
     } // Boton big
     &--big {
       padding: 1.8rem 3.6rem;
+      font-size: 2rem;
+      @include break(md-mw) {
+        font-size: 1.6rem;
+      }
     } // Boton small
     &--small {
       padding: 1rem 2rem;

@@ -1,9 +1,8 @@
 //DATA
-import { Global } from '../../data/Global';
+import { Global } from '../../Data';
 
 import React from 'react';
 import RRSS from './Footer--RRSS';
-import './Footer.scss';
 
 function Footer() {
   return (

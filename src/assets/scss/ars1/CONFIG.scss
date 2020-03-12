@@ -228,12 +228,12 @@ $_CONFIG: (
   ui: (
     colores: (
       default: #546e7a,
-      primario: #304ffe,
-      secundario: #9c27b0,
+      primario: #3375FF,
+      secundario: #424242,
       terciario: #ffd600,
       alertas: (
-        primaria: #304ffe,
-        secundaria: #9c27b0,
+        primaria: #3375FF,
+        secundaria: #424242,
         error: #ea5233,
         exito: #32dba3,
         aviso: #f7ae18,
@@ -246,7 +246,7 @@ $_CONFIG: (
         google: #f44336
       ),
       textos: (
-        titulos: #333,
+        titulos: #424242,
         parrafos: #546e7a,
         blockquote: #607d8b,
         listas: #546e7a,
@@ -257,8 +257,8 @@ $_CONFIG: (
       )
     ),
     fonts: (
-      general: 'Roboto',
-      titulos: 'Roboto'
+      general: 'Hind',
+      titulos: 'Playfair Display'
     ),
     sombras: (
       activo: true,

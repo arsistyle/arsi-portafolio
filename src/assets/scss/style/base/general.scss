@@ -1,0 +1,27 @@
+:root {
+  --header: 100px;
+  --logo: 60px;
+  --frame: 1360px;
+  --primario: #{$primario};
+  --secundario: #{$secundario};
+  --terciario: #{$terciario};
+  @include break(md-mw) {
+    --header: 45px;
+    --logo: 40px;
+  }
+}
+
+.frame {
+  width: 100%;
+  max-width: var(--frame);
+  margin: auto;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

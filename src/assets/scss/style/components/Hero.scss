@@ -1,0 +1,30 @@
+@import '../style';
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3rem;
+  }
+  &__info {
+    grid-area: 1 / 6 / 1 / 12;
+  }
+  &__name {
+    font-size: 13rem;
+    line-height: .9;
+    margin: 0;
+    margin-bottom: 3rem;
+  }
+  &__job {
+    color: var(--primario);
+    font-size: 5rem;
+    margin: 0;
+    margin-bottom: 5rem;
+  }
+}

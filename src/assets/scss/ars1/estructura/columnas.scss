@@ -1,8 +1,7 @@
 $total-cols: map-deep-get($_CONFIG, 'layout', 'cols', 'total');
 $gap: map-deep-get($_CONFIG, 'layout', 'cols', 'gap');
-.contenedor,
-.contenedor-fluido,
-.container-fluid {
+.container-fluid,
+.container {
   padding-left: $gap;
   padding-right: $gap;
   margin-left: auto;
@@ -12,7 +11,7 @@ $gap: map-deep-get($_CONFIG, 'layout', 'cols', 'gap');
 @each $slug, $w, $mw in map-deep-get($_CONFIG, 'layout', 'cols', 'breaks') {
   @if ($slug != pr) {
     @media (min-width: #{$w}px) {
-      .contenedor {
+      .container {
         max-width: #{$mw}px;
       }
     }
@@ -22,7 +21,6 @@ $gap: map-deep-get($_CONFIG, 'layout', 'cols', 'gap');
 .row {
   display: flex;
   flex: 0 1 auto;
-  // flex-direction: row;
   flex-wrap: wrap;
   margin-left: -$gap;
   margin-right: -$gap;

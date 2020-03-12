@@ -1,10 +1,13 @@
 import React from 'react';
 
-function Home(props) {
+/** COMPONENTS **/
+import Hero from '../Hero';
+
+const Home = props => {
   return (
-    <section>
-      <h1>Soy el home</h1>
-    </section>
+    <>
+      <Hero/>
+    </>
   );
 }
 

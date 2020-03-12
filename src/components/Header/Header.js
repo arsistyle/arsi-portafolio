@@ -1,9 +1,13 @@
 // Data
-import { Global } from '../../data/Global';
+import { Global } from '../../Data';
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Header.scss';
+
+/** ASSETS **/
+
+// Styles
+import '../../assets/scss/style/components/Header.scss';
 
 function Header(props) {
   return (

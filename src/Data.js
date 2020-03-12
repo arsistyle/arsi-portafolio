@@ -1,3 +1,6 @@
+import Home from './components/Home/Home';
+import Projects from './components/Projects/Projects';
+
 export const Global = {
   title: 'Arsi Portafolio',
   author: 'Arsi Larrondo',
@@ -20,3 +23,67 @@ export const Global = {
     // },
   ]
 };
+
+export const Menu = [
+  {
+    name: 'inicio',
+    label: 'Inicio',
+    url: '/',
+    component: Home
+  },
+  {
+    name: 'proyectos',
+    label: 'Proyectos',
+    url: '/proyectos',
+    component: Projects
+  }
+];
+
+export const Hero = {
+  name: 'Arsi Larrondo',
+  job: 'Diseñador Front-End',
+  image: '/img/avatar.jpg',
+  btns: [
+    {
+      label: 'Proyectos',
+      props: {
+        href: '#projects',
+        className: 'btn btn--primario btn--big',
+      }
+    },
+    {
+      label: 'Conóceme',
+      props: {
+        href: '/perfil',
+        className: 'btn btn--secundario btn--big btn--borde',
+      }
+    },
+  ]
+};
+
+export const ProjectsList = [
+  {
+    id: 0,
+    title: 'Prueba 01',
+    slug: 'prueba-01',
+    image: '/img/projects/01.jpg'
+  },
+  {
+    id: 1,
+    title: 'Prueba 02',
+    slug: 'prueba-02',
+    image: '/img/projects/02.jpg'
+  },
+  {
+    id: 2,
+    title: 'Prueba 01',
+    slug: 'prueba-01',
+    image: '/img/projects/01.jpg'
+  },
+  {
+    id: 3,
+    title: 'Prueba 02',
+    slug: 'prueba-02',
+    image: '/img/projects/02.jpg'
+  }
+];
