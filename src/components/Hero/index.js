@@ -9,7 +9,9 @@ const Hero = () => {
     <section className="hero">
       <div className="frame">
         <div className="hero__container">
-          <div className="hero__image"></div>
+          <div className="hero__image">
+            <img src={DataHero.avatar} alt={DataHero.name} />
+          </div>
           <div className="hero__info">
             <h1 className="hero__name">{DataHero.name}</h1>
             <h2 className="hero__job">{DataHero.job}</h2>

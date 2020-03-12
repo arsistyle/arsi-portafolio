@@ -1,5 +1,6 @@
 import Home from './components/Home/Home';
 import Projects from './components/Projects/Projects';
+import Avatar from './assets/img/avatar.jpg';
 
 export const Global = {
   title: 'Arsi Portafolio',
@@ -42,7 +43,7 @@ export const Menu = [
 export const Hero = {
   name: 'Arsi Larrondo',
   job: 'Diseñador Front-End',
-  image: '/img/avatar.jpg',
+  avatar: Avatar,
   btns: [
     {
       label: 'Proyectos',
