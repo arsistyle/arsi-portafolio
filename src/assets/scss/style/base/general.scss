@@ -36,6 +36,7 @@
   --header: 80px;
   --logo: 60px;
   --frame: 1360px;
+  --contentPadding: 5rem;
   @include break(md-mw) {
     --header: 45px;
     --logo: 40px;
@@ -46,4 +47,22 @@
   width: 100%;
   max-width: var(--frame);
   margin: auto;
+}
+
+@keyframes placeholder {
+  0%,
+  50%,
+  100% {
+    opacity: .75;
+  }
+  25%,
+  75% {
+    opacity: .2;
+  }
+}
+
+.placeholder {
+  &--child {
+    animation: placeholder 2s infinite forwards;
+  }
 }

@@ -18,6 +18,10 @@
       width: 100%;
       display: block;
     }
+    &.placeholder--child {
+      padding-bottom: 100%;
+      background: var(--primario900);
+    }
   }
   &__info {
     grid-area: 1 / 6 / 1 / 12;
@@ -30,11 +34,33 @@
     line-height: .9;
     margin: 0;
     margin-bottom: 3rem;
+    &.placeholder--child {
+      width: 80%;
+      height: 10rem;
+      background: var(--primario900);
+      margin-bottom: 3rem;
+    }
   }
   &__job {
     color: var(--primario);
     font-size: 5rem;
     margin: 0;
     margin-bottom: 5rem;
+    &.placeholder--child {
+      width: 70%;
+      height: 6rem;
+      background: var(--primario900);
+      margin-bottom: 3rem;
+    }
+  }
+  &__btn {
+    display: inline-flex;
+    border-radius: 6px;
+    &.placeholder--child {
+      width: 30%;
+      height: 6rem;
+      background: var(--primario900);
+      margin-right: 1.5rem;
+    }
   }
 }

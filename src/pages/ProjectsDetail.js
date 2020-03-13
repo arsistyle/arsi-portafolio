@@ -1,5 +1,6 @@
-import React from "react";
-import { ProjectsList } from "../Data";
+import React from 'react';
+import { ProjectsList } from '../Data';
+import Page from '../components/Page';
 
 const ProjectsDetail = ({ match }) => {
   const {
@@ -7,18 +8,14 @@ const ProjectsDetail = ({ match }) => {
   } = match;
   let item = ProjectsList.filter(x => x.slug === slug && x);
   item = item[0];
-  return (
-    <div className="projects__detail">
-      <div className="projects__banner">
-        <img src={item.image} alt={item.title} />
-      </div>
-      <div className="frame">
-        <div className="projects__content content">
-          <h1>{ item.title }</h1>
-        </div>
-      </div>
-    </div>
-  );
+
+  const Project = () => {
+    return (
+    <h1>{item.title}</h1>
+    );
+  };
+
+  return <Page banner={item.banner} content={Project} />;
 };
 
 export default ProjectsDetail;

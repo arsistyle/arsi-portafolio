@@ -37,10 +37,10 @@ function App(props) {
         <Header logo={Logo} menu={Menu}></Header>
         <Switch>
           {Menu.map((item, index) => {
-            const Page = item.component;
-            return <Route exact path={item.url} key={index} component={Page} />;
+            return <Route exact path={item.url} key={index} component={item.component} />;
           })}
-          <Route path="/proyectos/:slug" exact component={ProjectsDetail} />
+          <Route path="/proyectos/:slug" exact component={ProjectsDetail} name="Título del proyecto" />
+          {/* <Route name="404: No Match for route" path="*" component={NoMatch} /> */}
         </Switch>
       </Router>
       <Footer />

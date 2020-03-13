@@ -1,0 +1,10 @@
+[
+  {
+    "path": "/",
+    "breadcrumb": "Inicio"
+  },
+  {
+    "path": "/proyectos",
+    "breadcrumb": "Proyectos"
+  }
+]

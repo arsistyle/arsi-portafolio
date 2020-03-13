@@ -18,7 +18,7 @@
       display: inline-grid;
       @include transicion;
       background: var(--primario);
-      &:hover {
+      &:hover:not(.placeholder) {
         box-shadow: 0 0 20px negro(.1), 0 0 10px negro(.1);
         img {
           opacity: .1;
@@ -29,10 +29,17 @@
         }
       }
     }
+    &.placeholder {
+      background: none;
+    }
+    @include break(md-mw) {
+      margin-bottom: 3rem;
+    }
   }
   &__image {
     overflow: hidden;
     position: relative;
+    padding-bottom: 75%;
     @include hover() {
       grid-area: 1 / 1;
       z-index: 0;
@@ -44,6 +51,10 @@
       height: 100%;
       display: block;
       object-fit: cover;
+      @include posicion(absolute,0,0,null,null);
+    }
+    &.placeholder--child {
+      background: var(--primario900);
     }
   }
   &__info {
@@ -59,10 +70,20 @@
       @include transicion;
       transform: translateY(5rem);
       opacity: 0;
+      &.placeholder {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   }
   &__title {
     margin: 0;
+    &.placeholder--child {
+      background: var(--primario900);
+      width: 80%;
+      height: 3rem;
+      margin-bottom: 1.5rem;
+    }
   }
   &__tags {
     display: flex;
@@ -71,6 +92,11 @@
       color: var(--primario);
       font-family: var(--titlesFont);
       margin-right: 1.5rem;
+      &.placeholder--child {
+        width: 8rem;
+        height: 2rem;
+        background: var(--primario900);
+      }
     }
   }
 }
