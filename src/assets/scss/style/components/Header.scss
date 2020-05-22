@@ -1,6 +1,6 @@
 @import '../style';
 .header {
-  @include posicion(sticky, 0, 0, null, 0);
+  @include posicion(fixed, 0, 0, null, 0);
   display: flex;
   justify-content: space-between;
   align-items: center;
