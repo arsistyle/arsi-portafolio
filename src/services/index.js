@@ -17,6 +17,18 @@ export async function getHeader() {
   }
 }
 
+export async function getFooter() {
+  WP.footer = WP.registerRoute('acf/v3/options', '/footer/');
+  try {
+    const response = await WP.footer()
+      .get()
+      .then((x) => x);
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 export async function getMenu(menu) {
   WP.menu = WP.registerRoute('menus/v1/menus', `/${menu}/`);
   try {
@@ -50,6 +62,29 @@ export async function getHero() {
     const response = await WP.hero()
       .get()
       .then((x) => x);
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export async function getProjects(id, total = 100) {
+  WP.projects = WP.registerRoute('wp/v2', `/proyectos/`, {
+    params: ['categories', 'per_page'],
+  });
+
+  try {
+    const response = await (id
+      ? WP.projects()
+          .categories(id)
+          .per_page(total)
+          .get()
+          .then((x) => x)
+      : WP.projects()
+          .categories(id)
+          .per_page(total)
+          .get()
+          .then((x) => x));
     return response;
   } catch (e) {
     console.log(e);

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { NavLink } from 'react-router-dom';
-// import { Link as Ancla } from 'react-scroll';
-import ScrollspyNav from 'react-scrollspy-nav';
+import { NavLink } from 'react-router-dom';
 import { IoIosClose, IoIosMenu } from 'react-icons/io';
 import { getMenu } from '../services';
 
@@ -29,7 +27,6 @@ const Menu = ({ open, setOpen, responsive }) => {
         setMenu(response);
         setLoading(false);
       }
-      console.log(response)
     }
     loadMenu();
   }, []);
@@ -38,26 +35,28 @@ const Menu = ({ open, setOpen, responsive }) => {
     <></>
   ) : (
     menu.count && (
-      <ScrollspyNav scrollTargetIds={menu.items.map(x => x.url.replace('#', ''))} activeNavClass='menu__link--active'>
+      <>
         <ul className={`header__item header__item--menu menu ${open ? 'menu--active' : ''}`}>
           {menu.items.map((x, i) => {
             return (
               x.visible && (
                 <li className='menu__item' key={i}>
-                  <a
+                  <NavLink
+                    exact={x.title === 'Inicio' ? true : false}
                     className={`menu__link ${x.classes ? x.classes : ''} ${x.nuevo ? `menu__link--nuevo` : ''}`}
+                    activeClassName='menu__link--active'
                     target={x.target}
-                    href={x.url}
+                    to={x.url}
                     onClick={() => (responsive ? setOpen(!open) : setOpen(false))}
                   >
                     {x.title}
-                  </a>
+                  </NavLink>
                 </li>
               )
             );
           })}
         </ul>
-      </ScrollspyNav>
+      </>
     )
   );
 };

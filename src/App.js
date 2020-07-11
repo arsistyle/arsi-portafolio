@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
-import Hero from './components/Hero';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import Hero from './components/Hero';
+import { SectionProjects, SectionContact } from './components/Sections';
 import './assets/scss/ars1/ars1.scss';
 
 function ScrollToTop() {
@@ -20,6 +22,9 @@ function App() {
       <Router>
         <Header />
         <Hero />
+        <SectionProjects />
+        <SectionContact />
+        <Footer />
       </Router>
     </main>
   );

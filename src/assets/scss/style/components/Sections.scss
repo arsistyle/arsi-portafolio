@@ -1,0 +1,34 @@
+@import '../style';
+.section {
+  &--projects {
+    margin-bottom: 10rem;
+  }
+  &--contact {
+    padding: 10rem 1.5rem;
+    h2 {
+      font-size: 7rem;
+      margin-top: 0;
+      @include break(lg-mw) {
+        font-size: 5rem;
+      }
+      @include break(md-mw) {
+        font-size: 3rem;
+      }
+    }
+    animation: contact 20s linear infinite forwards;
+  }
+  &__contact {
+    padding: 10vw;
+    background: blanco(1);
+    box-shadow: 0 0 20px negro(.1);
+  }
+}
+
+@keyframes contact {
+  from {
+    background-position: 400px 400px;
+  }
+  to {
+    background-position: 0 0;
+  }
+}

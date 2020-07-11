@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "react-icons": "^3.10.0",
+    "react-lazyload": "^3.0.0",
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.7.16",
     "react-scrollspy-nav": "^1.2.4",

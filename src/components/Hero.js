@@ -3,7 +3,7 @@ import { Link as Ancla } from 'react-scroll';
 import { getHero } from '../services';
 import '../assets/scss/style/components/Hero.scss';
 
-function Hero() {
+const Hero = () => {
   const headerHeight = getComputedStyle(document.documentElement).getPropertyValue('--header');
   const [loading, setLoading] = useState(true);
   const [hero, setHero] = useState([]);
