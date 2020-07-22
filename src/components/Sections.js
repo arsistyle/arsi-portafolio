@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Projects from '../components/Projects';
+import ProjectsList from './ProjectsList';
 
 import pattern from '../assets/img/pattern-contactme.png';
 
@@ -11,7 +11,7 @@ export const SectionProjects = () => {
     <section className='section section--projects projects'>
       <div className='frame'>
         <h2 className='text-align-center-xs'>Últimos proyectos</h2>
-        <Projects/>
+        <ProjectsList items={6}/>
         <div className='projects__btn text-align-right-xs'>
           <div className='separador'></div>
           <NavLink to='/proyectos' className='btn btn--secundario btn--borde'>

@@ -41,6 +41,10 @@
     @include break(md-mw) {
       margin-bottom: 3rem;
     }
+    &--filter {
+      animation: filter 400ms linear 1 forwards;
+      transform-origin: top left;
+    }
   }
   &__image {
     overflow: hidden;
@@ -105,6 +109,7 @@
   }
   &__title {
     margin: 0;
+    font-size: 2.8rem;
     &.placeholder--child {
       background: var(--primario900);
       width: 80%;
@@ -125,5 +130,14 @@
         background: var(--primario900);
       }
     }
+  }
+}
+
+@keyframes filter {
+  from {
+    transform: scale(0,0);
+  }
+  to {
+    transform: scale(1,1);
   }
 }

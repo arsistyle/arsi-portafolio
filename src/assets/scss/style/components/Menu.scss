@@ -1,14 +1,21 @@
 @import '../style.scss';
 
 .menu {
-    display: flex;
-    &__link {
-        font-size: 1.7rem;
-        text-decoration: none;
-        padding: 1rem;
-        color: var(--secundario);
-        &--active {
-            color: var(--primario);
-        }
+  display: flex;
+  &__link {
+    font-size: 1.7rem;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    color: var(--secundario);
+    position: relative;
+    display: block;
+    @include transicion;
+    overflow: hidden;
+    &:hover {
+      opacity: 0.6;
     }
+    &--active {
+      color: var(--primario);
+    }
+  }
 }

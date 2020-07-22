@@ -1,0 +1,43 @@
+@import '../style';
+.filter {
+  display: flex;
+  padding: 0 calc(2 * var(--contentPadding));
+  margin-bottom: var(--contentPadding);
+  &__item {
+    color: var(--primario);
+    background: var(--primario1000);
+    margin: 0 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1;
+    padding: 1.5rem 3rem;
+    text-align: center;
+    text-decoration: none;
+    @include transicion;
+    user-select: none;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    @supports (display: flex) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @if map-deep-get($_CONFIG, 'ui', 'radios', 'activo') {
+      border-radius: map-deep-get($_CONFIG, 'ui', 'radios', 'valor');
+    }
+    @if map-deep-get($_CONFIG, 'ui', 'sombras', 'activo') {
+      box-shadow: map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'default', 'y')
+        map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'default', 'x')
+        map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'default', 'blur')
+        map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'default', 'spread')
+        rgba($default, map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'default', 'opacity'));
+    }
+    &--active {
+      background: var(--primario);
+      color: blanco(1);
+    }
+  }
+}

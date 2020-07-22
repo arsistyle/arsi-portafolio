@@ -46,7 +46,7 @@ const Menu = ({ open, setOpen, responsive }) => {
                     className={`menu__link ${x.classes ? x.classes : ''} ${x.nuevo ? `menu__link--nuevo` : ''}`}
                     activeClassName='menu__link--active'
                     target={x.target}
-                    to={x.url}
+                    to={x.path}
                     onClick={() => (responsive ? setOpen(!open) : setOpen(false))}
                   >
                     {x.title}

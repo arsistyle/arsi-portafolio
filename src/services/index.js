@@ -68,23 +68,38 @@ export async function getHero() {
   }
 }
 
-export async function getProjects(id, total = 100) {
+export async function getProjects(slug, total = 100, cat_slug) {
   WP.projects = WP.registerRoute('wp/v2', `/proyectos/`, {
-    params: ['categories', 'per_page'],
+    params: ['categories', 'per_page', 'slug'],
   });
 
   try {
-    const response = await (id
-      ? WP.projects()
-          .categories(id)
-          .per_page(total)
-          .get()
-          .then((x) => x)
-      : WP.projects()
-          .categories(id)
-          .per_page(total)
-          .get()
-          .then((x) => x));
+    let response;
+    if (cat_slug) {
+      response = await WP.categories()
+        .slug(cat_slug)
+        .then((x) => {
+          if (!x.length) {
+            throw new Error(`No category found for category "${cat_slug}"`);
+          }
+          return WP.projects().categories(x[0].id).per_page(6);
+        });
+      console.log(response);
+      return response;
+    }
+    if (slug) {
+      response = await WP.projects()
+        .per_page(total)
+        .slug(slug)
+        .get()
+        .then((x) => x);
+      return response;
+    }
+
+    response = await WP.projects()
+      .per_page(total)
+      .get()
+      .then((x) => x);
     return response;
   } catch (e) {
     console.log(e);
