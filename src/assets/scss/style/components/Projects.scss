@@ -14,6 +14,8 @@
   &__item {
     text-decoration: none;
     overflow: hidden;
+    display: block;
+    width: 100%;
     @include hover() {
       display: inline-grid;
       width: 100%;
@@ -85,12 +87,13 @@
       z-index: 0;
     }
     &.placeholder--child {
-      background: var(--primario900);
+      background: var(--primario1000);
     }
   }
   &__info {
-    padding: 3rem;
+    padding: 3rem 0;
     @include hover() {
+      padding: 3rem;
       grid-area: 1 / 1;
       z-index: 1;
       display: flex;
@@ -110,6 +113,9 @@
   &__title {
     margin: 0;
     font-size: 2.8rem;
+    @include break(md-mw) {
+      font-size: 2.4rem;
+    }
     &.placeholder--child {
       background: var(--primario900);
       width: 80%;

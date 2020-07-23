@@ -8,31 +8,31 @@ import Breadcrumb from '../components/Breadcrumbs';
 
 import '../assets/scss/style/components/Page.scss';
 
-const Pages = (props) => {
-  console.log(props);
+const Single = (props) => {
   const { slug, component: Component, extra } = props;
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState([]);
+  const [single, setSingle] = useState([]);
   const options = {
     items: [
       { to: '/', label: 'Inicio' },
-      { to: '/proyectos', label: 'Proyectos', active: true },
+      { to: '/proyectos', label: 'Inicio' },
+      { to: `/proyectos/${slug}`, label: single.title, active: true },
     ],
   };
   useEffect(() => {
-    async function loadPage() {
+    async function loadSingle() {
       const response = await getPage(slug);
       if (response) {
-        setPage(response[0]);
-        setLoading(false);
+        setSingle(response[0]);
+        // setLoading(false);
       }
     }
-    loadPage();
+    loadSingle();
   }, [slug]);
   return (
     !loading && (
       <div className='page'>
-        <Banner img={page.thumbnail} />
+        <Banner img={single.thumbnail} />
         <div className='container-fluid'>
           <div className='frame'>
             <div className='page__content'>
@@ -42,18 +42,15 @@ const Pages = (props) => {
                     return <Link className={`breadcrumbs__link ${active && `breadcrumbs__link--active`}`} key={to} to={to} dangerouslySetInnerHTML={{ __html: label }}></Link>;
                   })}
                 </Breadcrumb>
-                <h1>{page.title}</h1>
+                <h1>{single.title}</h1>
               </header>
-              <div className='page__content__overlap'>
-                <Component {...extra} />
-              </div>
             </div>
           </div>
         </div>
-        {page.acf['seccion_contacto'] && <SectionContact />}
+        <SectionContact />
       </div>
     )
   );
 };
 
-export default Pages;
+export default Single;

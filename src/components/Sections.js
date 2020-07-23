@@ -9,14 +9,16 @@ import '../assets/scss/style/components/Sections.scss'
 export const SectionProjects = () => {
   return (
     <section className='section section--projects projects'>
-      <div className='frame'>
-        <h2 className='text-align-center-xs'>Últimos proyectos</h2>
-        <ProjectsList items={6}/>
-        <div className='projects__btn text-align-right-xs'>
-          <div className='separador'></div>
-          <NavLink to='/proyectos' className='btn btn--secundario btn--borde'>
-            Ver todos
-          </NavLink>
+      <div className='container-fluid'>
+        <div className='frame'>
+          <h2 className='text-align-center-md'>Últimos proyectos</h2>
+          <ProjectsList items={6} />
+          <div className='projects__btn text-align-right-xs'>
+            <div className='separador'></div>
+            <NavLink to='/proyectos' className='btn btn--secundario btn--borde'>
+              Ver todos
+            </NavLink>
+          </div>
         </div>
       </div>
     </section>

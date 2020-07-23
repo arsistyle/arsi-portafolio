@@ -43,7 +43,7 @@ const Projects = (props) => {
     loadProjects();
   }, [cat_slug, items, filter, slug]);
   return loading ? (
-    <>{placeholders}</>
+    <div className="projects__list">{placeholders}</div>
   ) : (
     <>
       {filter && <Filter />}

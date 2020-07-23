@@ -9,8 +9,8 @@ import Breadcrumb from '../components/Breadcrumbs';
 import '../assets/scss/style/components/Page.scss';
 
 const Pages = (props) => {
-  console.log(props);
-  const { slug, component: Component, extra } = props;
+  // console.log(props);
+  const { slug, component: Component, page_extra } = props;
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState([]);
   const options = {
@@ -45,7 +45,7 @@ const Pages = (props) => {
                 <h1>{page.title}</h1>
               </header>
               <div className='page__content__overlap'>
-                <Component {...extra} />
+                <Component {...page_extra} />
               </div>
             </div>
           </div>

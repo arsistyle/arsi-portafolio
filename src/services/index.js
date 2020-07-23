@@ -105,3 +105,18 @@ export async function getProjects(slug, total = 100, cat_slug) {
     console.log(e);
   }
 }
+
+export async function getProject(slug) {
+  WP.proyecto = WP.registerRoute('wp/v2', `/proyectos/`, {
+    params: ['slug'],
+  });
+  try {
+    const response = await WP.proyecto()
+      .slug(slug)
+      .get()
+      .then((x) => x);
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
