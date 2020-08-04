@@ -23,6 +23,13 @@
         height: 1.4rem;
       }
     }
+    &--placeholder {
+      height: 3rem;
+      width: 10rem;
+      margin-right: 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--primario900);
+    }
   }
   &__link {
     font-size: 1.6rem;

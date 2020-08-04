@@ -1,0 +1,62 @@
+@import '../style.scss';
+.project {
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding: var(--contentPadding) calc(2 * var(--contentPadding));
+    background: blanco(1);
+    box-shadow: 0 -10vw 20px -10vw negro(0.2);
+    min-height: 90vh;
+    border-radius: 1rem;
+    &__header {
+      h1 {
+        margin-top: 0.25em;
+        margin-bottom: 1.5em;
+      }
+    }
+    &__overlap {
+      margin-left: calc(-2 * var(--contentPadding));
+      margin-right: calc(-2 * var(--contentPadding));
+      width: calc(100% + var(--contentPadding) * 4);
+    }
+  }
+  &__title {
+    &--placeholder {
+      width: 50%;
+      height: 5rem;
+      background: var(--primario900);
+    }
+  }
+  &__shots {
+    &__item {
+      margin-bottom: 10rem;
+    }
+    &__title {
+      margin-bottom: 2rem;
+      &--placeholder {
+        height: 3.5rem;
+        width: 30%;
+        background: var(--primario900);
+      }
+    }
+    &__caption {
+      margin-bottom: 3rem;
+      &--placeholder {
+        height: 1.6rem;
+        margin-bottom: 1rem;
+        background: var(--primario900);
+      }
+    }
+    &__image {
+      overflow: hidden;
+      img {
+        width: 100%;
+        display: block;
+      }
+      &--placeholder {
+        padding-bottom: 50%;
+        background: var(--primario900);
+      }
+    }
+  }
+}

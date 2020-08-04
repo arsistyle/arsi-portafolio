@@ -2,10 +2,17 @@
 .banner {
   background-attachment: fixed;
   background-position: center center;
-  background-repeat: repeat;
-  animation: banner 20s linear infinite forwards;
+  background-size: cover;
   height: 40vh;
   margin-bottom: -25vh;
+  &--animated {
+    background-size: 250px;
+    background-repeat: repeat;
+    animation: banner 20s linear infinite forwards;
+  }
+  &--placeholder {
+    background: var(--primario900);
+  }
 }
 
 @keyframes banner {

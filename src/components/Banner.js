@@ -2,11 +2,12 @@ import React from 'react';
 import '../assets/scss/style/components/Banner.scss';
 
 const Banner = (props) => {
-  const { img } = props;
+  const { img, animated, color } = props;
   return (
-    <div className='banner' style={
+    <div className={`banner ${animated && 'banner--animated'}`} style={
       {
-        backgroundImage: `url(${img})`
+        backgroundImage: `url(${img})`,
+        backgroundColor: color,
       }
     }>
     </div>

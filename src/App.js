@@ -10,7 +10,13 @@ function App() {
     <main>
       <Router>
         <Header />
-        <Routes />
+        <section
+          style={{
+            minHeight: 'calc(100vh - var(--header))',
+          }}
+        >
+          <Routes />
+        </section>
         <Footer />
       </Router>
     </main>

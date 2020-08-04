@@ -27,8 +27,8 @@ for (let i = 0; i < 3; i++) {
 }
 
 const Projects = (props) => {
-  const { items, filter } = props;
-  const { slug, cat_slug } = useParams();
+  const { items, filter, cat_slug } = props;
+  const { slug } = useParams();
   const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState([]);
 
@@ -43,7 +43,7 @@ const Projects = (props) => {
     loadProjects();
   }, [cat_slug, items, filter, slug]);
   return loading ? (
-    <div className="projects__list">{placeholders}</div>
+    <div className='projects__list'>{placeholders}</div>
   ) : (
     <>
       {filter && <Filter />}

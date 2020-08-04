@@ -73,6 +73,8 @@ export async function getProjects(slug, total = 100, cat_slug) {
     params: ['categories', 'per_page', 'slug'],
   });
 
+  console.log(slug, cat_slug);
+
   try {
     let response;
     if (cat_slug) {

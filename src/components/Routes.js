@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { getMenu } from '../services';
-import Page from '../components/Pages';
+import Pages from '../components/Pages';
 import Home from '../components/Pages--home';
 import Projects from '../components/ProjectsList';
+import Project from '../components/Project';
+import Resume from '../components/Resume';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -18,6 +20,8 @@ function ScrollToTop() {
 const COMPONENTES = {
   Home,
   Projects,
+  Project,
+  Resume,
 };
 
 const ROUTES = (data) => {
@@ -30,7 +34,7 @@ const ROUTES = (data) => {
         component: COMPONENTES[x.component],
       });
     x['child_items']?.length &&
-      x['child_items'].map((x, i) => 
+      x['child_items'].map((x, i) =>
         routes.push({
           ...x,
           component: COMPONENTES[x.component],
@@ -60,16 +64,13 @@ const Routes = () => {
       {!loading &&
         ROUTES(routes).map((x, i) => {
           const Component = x.component;
-          // console.log(x);
           return (
-            x.component && (
-              <Route key={i} path={x.url} exact={x.exact}>
-                {x.ScrollToTop && <ScrollToTop />}
-                {x.type === 'custom' && <Component {...x.extras} />}
-                {x.type === 'page' && <Page slug={x.pageSlug || x.slug} component={Component} exact={x.exact} page_extra={{ ...x.page_extra }} />}
-                {/* {x.type === 'single' && <Single slug={x.singleSlug || x.slug} component={Component} exact={x.exact} {...x.extras} />} */}
-              </Route>
-            )
+            <Route key={i} path={x.url} exact={x.exact}>
+              {x.scrolltotop && <ScrollToTop />}
+              {x.type === 'custom' && <Component {...x.extras} />}
+              {x.type === 'page' && <Pages slug={x.slug} component={Component} exact={x.exact} x={{...x}}  />}
+              {x.type === 'project' && <Project {...x.extras} />}
+            </Route>
           );
         })}
     </Switch>
