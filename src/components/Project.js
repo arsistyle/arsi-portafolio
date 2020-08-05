@@ -55,20 +55,21 @@ const Project = () => {
               <h1>{project.title}</h1>
             </header>
             <section className='project__content__inside' dangerouslySetInnerHTML={{ __html: project.acf.content }}></section>
-            <section className='project__content__shots'>
-              {/* <PlaceholderProject /> */}
-              {project.acf.capturas.map((x, i) => (
-                <LazyLoad placeholder={<PlaceholderProject />} throttle={3000} key={i}>
-                  <div className='project__shots__item'>
-                    <h3 className='project__shots__title'>{x.title}</h3>
-                    <p className='project__shots__caption'>{x.caption}</p>
-                    <div className='project__shots__image'>
-                      <img src={x.shot} alt={x.title} />
+            {project.acf.capturas?.length && (
+              <section className='project__content__shots'>
+                {project.acf.capturas.map((x, i) => (
+                  <LazyLoad placeholder={<PlaceholderProject />} throttle={3000} key={i}>
+                    <div className='project__shots__item'>
+                      <h3 className='project__shots__title'>{x.title}</h3>
+                      <p className='project__shots__caption'>{x.caption}</p>
+                      <div className='project__shots__image'>
+                        <img src={x.shot} alt={x.title} />
+                      </div>
                     </div>
-                  </div>
-                </LazyLoad>
-              ))}
-            </section>
+                  </LazyLoad>
+                ))}
+              </section>
+            )}
           </div>
         </div>
       </div>

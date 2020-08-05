@@ -2,12 +2,11 @@
 .banner {
   background-attachment: fixed;
   background-position: center center;
-  background-size: cover;
+  background-size: 250px;
+  background-repeat: repeat;
   height: 40vh;
   margin-bottom: -25vh;
   &--animated {
-    background-size: 250px;
-    background-repeat: repeat;
     animation: banner 20s linear infinite forwards;
   }
   &--placeholder {

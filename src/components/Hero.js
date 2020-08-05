@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link as Ancla } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import { getHero } from '../services';
 import '../assets/scss/style/components/Hero.scss';
 
@@ -20,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className='hero' id="inicio">
+    <section className='hero' id='inicio'>
       <div className='frame'>
         {loading ? (
           <div className='hero__container'>
@@ -43,12 +44,12 @@ const Hero = () => {
               <h1 className='hero__name'>{hero.name}</h1>
               <h2 className='hero__job'>{hero.job}</h2>
               <div className='hero__btns btn__grupo'>
-                <Ancla to='proyectos' smooth={true} offset={-(Number(headerHeight.replace('px', '')) + 30)} className='hero__btn btn btn--primario btn--big fadeInUp'>
+                <Ancla to='proyectos' smooth={true} offset={-(Number(headerHeight.replace('px', '')) + 30)} className='hero__btn btn btn--primario btn--big'>
                   Proyectos
                 </Ancla>
-                <Ancla to='conoceme' smooth={true} offset={-(Number(headerHeight.replace('px', '')) + 30)} className='hero__btn btn btn--secundario btn--big btn--borde fadeInUp'>
+                <Link to='/cv' className='hero__btn btn btn--secundario btn--big btn--borde'>
                   Conóceme
-                </Ancla>
+                </Link>
               </div>
             </div>
           </div>
@@ -56,6 +57,6 @@ const Hero = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Hero;

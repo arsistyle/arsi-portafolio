@@ -6,6 +6,7 @@ import Home from '../components/Pages--home';
 import Projects from '../components/ProjectsList';
 import Project from '../components/Project';
 import Resume from '../components/Resume';
+import Contact from '../components/Contact';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ const COMPONENTES = {
   Projects,
   Project,
   Resume,
+  Contact
 };
 
 const ROUTES = (data) => {

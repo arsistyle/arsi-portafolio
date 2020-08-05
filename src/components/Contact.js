@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
 
 const Contact = () => {
   return (
-    <section className='section section--contact contact'>
-      <div className='frame'>
-        <div className="contact__footer text-align-center">
-          <h2 className="h1">Trabajemos juntos</h2>
+    <div className="contact">
+      <div className="container--fluid">
+        <div className="frame">
+          <h4>Formulario en construcción</h4>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

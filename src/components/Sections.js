@@ -8,7 +8,7 @@ import '../assets/scss/style/components/Sections.scss'
 
 export const SectionProjects = () => {
   return (
-    <section className='section section--projects projects'>
+    <section className='section section--projects projects' id="proyectos">
       <div className='container-fluid'>
         <div className='frame'>
           <h2 className='text-align-center-md'>Últimos proyectos</h2>

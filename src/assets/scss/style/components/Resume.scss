@@ -45,31 +45,35 @@
       margin-bottom: 10rem;
     }
   }
-  &__jobs {
+  &__data {
     margin-bottom: 10rem;
     color: var(--secundario);
-    padding-left: 3rem;
-    position: relative;
-    &::after {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 100%;
-      background: var(--primario);
-      opacity: 0.5;
-      @include posicion(absolute, 3rem, null, 0, 0);
+    &__container {
+      position: relative;
+      &::after {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 100%;
+        background: var(--primario);
+        opacity: 0.5;
+        @include posicion(absolute, 3rem, null, 0, 1.1rem);
+        transform: translateX(50%);
+      }
     }
     &__item {
       margin-bottom: 3rem;
+      padding-left: 5rem;
       &:last-of-type {
         position: relative;
         &::before {
           content: '';
           display: block;
-          width: 5px;
+          width: 10px;
           background: blanco(1);
           z-index: 1;
-          @include posicion(absolute,3rem,null,-4rem,-3rem)
+          @include posicion(absolute, 3rem, null, -4rem, 1.5rem);
+          transform: translateX(-50%);
         }
       }
     }
@@ -78,10 +82,12 @@
       font-size: 1.6rem;
       opacity: 0.7;
     }
-    &__company {
+    &__title {
       font-size: 1.8rem;
       color: var(--primario);
       position: relative;
+      line-height: 1;
+      margin-bottom: 0.5rem;
       &::after {
         content: '';
         display: block;
@@ -91,28 +97,23 @@
         background: var(--primario);
         border: 4px solid blanco(1);
         z-index: 1;
-        @include posicion(absolute, 0, null, 0, -3.8rem);
+        @include posicion(absolute, -50%, null, 0, -3.5rem);
+        transform: translate(-50%, 50%);
       }
       &--today {
         &::after {
-          animation: today 1500ms linear infinite forwards;
+          // animation: today 1500ms linear infinite forwards;
+          width: 25px;
+          height: 25px;
+          box-shadow: 0 0 0 1px var(--primario);
         }
       }
     }
-    &__job {
+    &__detail {
       font-size: 1.8rem;
     }
     &__description {
       font-size: 1.6rem;
     }
-  }
-}
-
-@keyframes today {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
   }
 }
