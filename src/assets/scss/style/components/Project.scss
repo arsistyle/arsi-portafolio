@@ -7,7 +7,7 @@
     background: blanco(1);
     box-shadow: 0 -10vw 20px -10vw negro(0.2);
     min-height: 90vh;
-    border-radius: 1rem;
+    border-radius: rem(10);
     &__header {
       h1 {
         margin-top: 0.25em;
@@ -23,27 +23,27 @@
   &__title {
     &--placeholder {
       width: 50%;
-      height: 5rem;
+      height: rem(50);
       background: var(--primario900);
     }
   }
   &__shots {
     &__item {
-      margin-bottom: 10rem;
+      margin-bottom: rem(100);
     }
     &__title {
-      margin-bottom: 2rem;
+      margin-bottom: rem(20);
       &--placeholder {
-        height: 3.5rem;
+        height: rem(35);
         width: 30%;
         background: var(--primario900);
       }
     }
     &__caption {
-      margin-bottom: 3rem;
+      margin-bottom: rem(30);
       &--placeholder {
-        height: 1.6rem;
-        margin-bottom: 1rem;
+        height: rem(16);
+        margin-bottom: rem(10);
         background: var(--primario900);
       }
     }

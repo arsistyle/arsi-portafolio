@@ -25,6 +25,7 @@ const Pages = (props) => {
       if (response) {
         setPage(response[0]);
         setLoading(false);
+        console.log(response[0])
       }
     }
     loadPage();
@@ -45,7 +46,7 @@ const Pages = (props) => {
                 <h1>{page.title}</h1>
               </header>
               <div className='page__content__overlap'>
-                <Component {...extra} />
+                <Component {...extra} content={page.content}/>
               </div>
             </div>
           </div>

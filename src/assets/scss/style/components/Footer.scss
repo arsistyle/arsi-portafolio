@@ -4,12 +4,12 @@
     background: var(--primario);
     display: flex;
     justify-content: center;
-    padding: 2rem 0;
+    padding: rem(20) 0;
   }
   &__red {
-    width: 5rem;
-    height: 5rem;
-    margin: 1.5rem;
+    width: rem(50);
+    height: rem(50);
+    margin: rem(15);
     @include transicion;
     &--placeholder {
       background: blanco(.2);
@@ -26,16 +26,16 @@
   }
   &__bottom {
     background: var(--secundario);
-    padding: 2rem 1.5rem;
+    padding: rem(20) rem(15);
   }
   &__copyright {
     color: blanco(1);
-    font-size: 1.4rem;
+    font-size: rem(14);
     text-align: center;
     &--placeholder {
       width: 100%;
       max-width: 400px;
-      height: 1.5rem;
+      height: rem(15);
       background: blanco(.2);
       margin: auto;
     }

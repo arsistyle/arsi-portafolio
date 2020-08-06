@@ -122,3 +122,21 @@ export async function getProject(slug) {
     console.log(e);
   }
 }
+
+export async function postContact({ nombre, email, mensaje }) {
+  WP.contact = WP.registerRoute('wp/v2', '/comments');
+  try {
+    const data = await WP.contact()
+      .create({
+        author_name: nombre,
+        author_email: email,
+        content: mensaje,
+        post: 64,
+      })
+      .then((x) => x);
+    return data;
+  } catch (e) {
+    console.log(e);
+    return e;
+  }
+}

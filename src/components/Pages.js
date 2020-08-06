@@ -48,7 +48,7 @@ const Pages = (props) => {
               <h1>{page.title}</h1>
             </header>
             <section className={`page__content__inside ${page.acf.overlap && 'page__content__overlap'}`}>
-              <Component {...extras} page={page} />
+              <Component {...extras} page={page} content={page.content.rendered} />
             </section>
           </div>
         </div>

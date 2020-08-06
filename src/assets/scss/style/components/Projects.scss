@@ -41,7 +41,7 @@
       background: none;
     }
     @include break(md-mw) {
-      margin-bottom: 3rem;
+      margin-bottom: rem(30);
     }
     &--filter {
       animation: filter 400ms linear 1 forwards;
@@ -91,9 +91,9 @@
     }
   }
   &__info {
-    padding: 3rem 0;
+    padding: rem(30) 0;
     @include hover() {
-      padding: 3rem;
+      padding: rem(30);
       grid-area: 1 / 1;
       z-index: 1;
       display: flex;
@@ -112,15 +112,15 @@
   }
   &__title {
     margin: 0;
-    font-size: 2.8rem;
+    font-size: rem(28);
     @include break(md-mw) {
-      font-size: 2.4rem;
+      font-size: rem(24);
     }
     &.placeholder--child {
       background: var(--primario900);
       width: 80%;
-      height: 3rem;
-      margin-bottom: 1.5rem;
+      height: rem(30);
+      margin-bottom: rem(15);
     }
   }
   &__tags {
@@ -129,7 +129,7 @@
       font-size: 2rem;
       color: var(--primario);
       font-family: var(--titlesFont);
-      margin-right: 1.5rem;
+      margin-right: rem(15);
       &.placeholder--child {
         width: 8rem;
         height: 2rem;

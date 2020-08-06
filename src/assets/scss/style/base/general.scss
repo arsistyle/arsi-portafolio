@@ -37,7 +37,7 @@
   --header: 80px;
   --logo: 60px;
   --frame: 1360px;
-  --contentPadding: 5rem;
+  --contentPadding: #{rem(50)};
   @include break(md-mw) {
     --header: 45px;
     --logo: 40px;

@@ -1,18 +1,18 @@
 @import '../style';
 .section {
   &--projects {
-    margin-bottom: 10rem;
+    margin-bottom: rem(100);
   }
   &--contact {
-    padding: 10rem 1.5rem;
+    padding: rem(100) rem(15);
     h2 {
-      font-size: 7rem;
+      font-size: rem(70);
       margin-top: 0;
       @include break(lg-mw) {
-        font-size: 5rem;
+        font-size: rem(50);
       }
       @include break(md-mw) {
-        font-size: 3rem;
+        font-size: rem(30);
       }
     }
     animation: contact 20s linear infinite forwards;

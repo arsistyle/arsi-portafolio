@@ -3,15 +3,15 @@
 .resume {
   &__subtitle {
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: rem(18);
     color: var(--primario);
     margin-bottom: 1em;
   }
   &__header {
     display: grid;
     grid-template-columns: 35% 50%;
-    column-gap: 3rem;
-    margin-bottom: 10rem;
+    column-gap: rem(30);
+    margin-bottom: rem(100);
     @include break(sm-mw) {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -33,20 +33,20 @@
       line-height: 0.9;
     }
     &__name {
-      font-size: 8rem;
+      font-size: rem(80);
       margin-bottom: 0.5em;
     }
     &__job {
-      font-size: 5rem;
+      font-size: rem(50);
     }
   }
   &__about {
     &__data {
-      margin-bottom: 10rem;
+      margin-bottom: rem(100);
     }
   }
   &__data {
-    margin-bottom: 10rem;
+    margin-bottom: rem(100);
     color: var(--secundario);
     &__container {
       position: relative;
@@ -57,13 +57,13 @@
         height: 100%;
         background: var(--primario);
         opacity: 0.5;
-        @include posicion(absolute, 3rem, null, 0, 1.1rem);
+        @include posicion(absolute, rem(30), null, 0, rem(11));
         transform: translateX(50%);
       }
     }
     &__item {
-      margin-bottom: 3rem;
-      padding-left: 5rem;
+      margin-bottom: rem(30);
+      padding-left: rem(50);
       &:last-of-type {
         position: relative;
         &::before {
@@ -72,22 +72,22 @@
           width: 10px;
           background: blanco(1);
           z-index: 1;
-          @include posicion(absolute, 3rem, null, -4rem, 1.5rem);
+          @include posicion(absolute, rem(30), null, -(rem(40)), rem(15));
           transform: translateX(-50%);
         }
       }
     }
     &__date {
       text-transform: uppercase;
-      font-size: 1.6rem;
+
       opacity: 0.7;
     }
     &__title {
-      font-size: 1.8rem;
+      font-size: rem(18);
       color: var(--primario);
       position: relative;
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: rem(5);
       &::after {
         content: '';
         display: block;
@@ -97,7 +97,7 @@
         background: var(--primario);
         border: 4px solid blanco(1);
         z-index: 1;
-        @include posicion(absolute, -50%, null, 0, -3.5rem);
+        @include posicion(absolute, -50%, null, 0, -(rem(35)));
         transform: translate(-50%, 50%);
       }
       &--today {
@@ -110,10 +110,7 @@
       }
     }
     &__detail {
-      font-size: 1.8rem;
-    }
-    &__description {
-      font-size: 1.6rem;
+      font-size: rem(18);
     }
   }
 }

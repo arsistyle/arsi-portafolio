@@ -6,10 +6,9 @@
     border: 1px solid $default;
     cursor: pointer;
     display: inline-block;
-    font-size: 1.6rem;
     font-weight: 300;
     line-height: 1;
-    padding: 1.5rem 3rem;
+    padding: rem(15) rem(30);
     text-align: center;
     text-decoration: none;
     @include transicion;
@@ -52,8 +51,8 @@
         box-shadow: none;
       }
     }
-    @media (max-width:54.3rem) {
-      padding: 1.2rem 2rem;
+    @media (max-width:rem(543)) {
+      padding: rem(12) rem(20);
     }
     input {
       @include posicion(fixed,-200rem,-200rem,null,null);
@@ -103,7 +102,7 @@
           map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'hover', 'spread')
           rgba($default, map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'hover', 'opacity'));
         } @else {
-          transform: translateY(-.2rem) scaleX(.95);
+          transform: translateY(-(rem(2))) scaleX(.95);
         }
         .no-csstransforms & {
           text-decoration: none;
@@ -125,7 +124,7 @@
         map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'focus', 'spread')
         rgba($default, map-deep-get($_CONFIG, 'ui', 'sombras', 'tipo', 'focus', 'opacity'));
       } @else {
-        transform: translateY(-.2rem) scaleX(.95);
+        transform: translateY(-(rem(2))) scaleX(.95);
       }
       // border: 1px dashed ennegrecer($default, 30%);
     }
@@ -152,8 +151,8 @@
     &__ripple {
       position: absolute;
       display: block;
-      width: 2rem;
-      height: 2rem;
+      width: rem(20);
+      height: rem(20);
       border-radius: 50%;
       background: rgba(blanquear($default, 50%), .4);
       animation: ripple .5s 1;
@@ -422,14 +421,14 @@
     }
     // Boton circulo
     &--circulo {
-      width: 5rem;
-      height: 5rem;
-      max-width: 5rem;
+      width: rem(50);
+      height: rem(50);
+      max-width: rem(50);
       border-radius: 50%;
       text-align: center;
       padding: 0;
       &:before {
-        font-size: 2rem;
+        font-size: rem(20);
       }
       &:focus {
         border-style: dashed;
@@ -438,8 +437,8 @@
     // Boton con icono
     &--icono {
       &:before {
-        margin: 0 .5rem;
-        font-size: 2rem;
+        margin: 0 rem(5);
+        font-size: rem(20);
         line-height: .75;
       }
     } 
@@ -451,21 +450,21 @@
       width: auto;
     } // Boton big
     &--big {
-      padding: 1.8rem 3.6rem;
-      font-size: 2rem;
+      padding: rem(18) rem(36);
+      font-size: rem(20);
       @include break(md-mw) {
-        font-size: 1.6rem;
+        font-size: rem(16);
       }
     } // Boton small
     &--small {
-      padding: 1rem 2rem;
+      padding: rem(10) rem(20);
     } // Boton x-small
     &--xsmall {
-      padding: .4rem 1.5rem;
-      font-size: 1.4rem;
+      padding: rem(4) rem(15);
+      font-size: rem(14);
     } // Boton ancho
     &--ancho {
-      padding: 1.2rem 5rem;
+      padding: rem(120) rem(50);
     }
     .no-mediaqueries & {
       &--block {
@@ -482,7 +481,7 @@
         &:last-child {
           margin-right: 0;
         }
-        @media (min-width:120rem) {
+        @media (min-width:rem(120)) {
           &--block-lg {
             margin-right: 0;
           }

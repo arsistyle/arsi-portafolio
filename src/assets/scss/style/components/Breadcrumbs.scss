@@ -2,39 +2,27 @@
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
-  // background: blanco(1);
-  // height: 80px;
-  // align-items: center;
-  // padding: 3rem 5rem;
-  // position: relative;
-  // z-index: 2;
-  // box-shadow: 0 0 50px negro(0.1);
-  // @include break(md-mw) {
-  //   padding: 1.5rem;
-  //   height: auto;
-  // }
   &__item {
     display: flex;
     align-items: center;
     &--separator {
       svg {
         fill: gris(70);
-        width: 1.4rem;
-        height: 1.4rem;
+        width: rem(14);
+        height: rem(14);
       }
     }
     &--placeholder {
-      height: 3rem;
-      width: 10rem;
-      margin-right: 1rem;
-      margin-bottom: 1.5rem;
+      height: rem(30);
+      width: rem(100);
+      margin-right: rem(10);
+      margin-bottom: rem(15);
       background: var(--primario900);
     }
   }
   &__link {
-    font-size: 1.6rem;
     color: gris(60);
-    padding: 0.4rem 1rem;
+    padding: rem(4) rem(10);
     text-decoration: none;
     &--active {
       color: gris(40);

@@ -56,7 +56,7 @@ $_CONFIG: (
 
     //--- BADGES
     badges: (
-      activo: true,
+      activo: false,
       tipo: (
         pills: true
       )
@@ -89,7 +89,7 @@ $_CONFIG: (
 
     //--- TABLAS
     tablas: (
-      activo: true,
+      activo: false,
       tipo: (
         full: true,
         small: true,
@@ -132,7 +132,7 @@ $_CONFIG: (
 
     //--- TABS
     tabs: (
-      activo: true,
+      activo: false,
       tipo: (
         vertical: true,
         responsive: true
@@ -141,17 +141,17 @@ $_CONFIG: (
 
     //--- ACCORDION
     accordion: (
-      activo: true
+      activo: false
     ),
 
     //--- PRELOADER GENERAL
     preloader-general: (
-      activo: true
+      activo: false
     ),
 
     //--- LENGUAJES ETIQUETAS (languajes badges)
     languaje-badges: (
-      activo: true,
+      activo: false,
       tipo: (
         html: true,
         js: true,
@@ -161,11 +161,11 @@ $_CONFIG: (
     ),
 
     //--- Principios de la librería, que se puede hacer y que no
-    principios: true,
+    principios: false,
 
     //--- Demos de código
     codigo: (
-      activo: true
+      activo: false
     ),
 
     //--- GALERIA IMAGENES (OJO: solo funcionará si fancybox está activo)
@@ -176,7 +176,7 @@ $_CONFIG: (
     externos: (
 
       //----- FancyBox se utiliza para las galerías y los lightboxs
-      fancybox: true,
+      fancybox: false,
 
       //----- Carrusel y slider
       owl-carousel: false,
@@ -186,7 +186,7 @@ $_CONFIG: (
   //---- ANIMACIONES ----//
   // Animaciones generales del sitio, no confundir con transiciones
   animaciones: (
-    todas: true,
+    todas: false,
     bounce: true,
     growIn: true,
     shake: true,
