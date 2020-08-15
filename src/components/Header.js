@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useScroll, useCurrentWitdh } from '../Hooks';
-import Menu, { MenuResponsive } from './Menu';
+import { useCurrentWitdh } from '../Hooks';
+import Menu, { BurgerIcon } from './Menu';
 import Bg from './Bg';
 import Logo from '../assets/img/logo.svg';
 import '../assets/scss/style/components/Header.scss';
 
 const Header = () => {
-  const headerHeight = getComputedStyle(document.documentElement).getPropertyValue('--header');
-  let scrollY = useScroll().scrollY;
   const [open, setOpen] = useState(false);
-  // console.log(open);
+  const currentWidth = useCurrentWitdh();
+  const [width, setWidth] = useState(false);
+  useEffect(() => {
+    currentWidth < 992 ? setWidth(true) : setWidth(false);
+  }, [currentWidth]);
   return (
-    <header className={`header fadeInDown ${scrollY > Number(headerHeight.replace('px', '')) ? 'header--active' : ''}`}>
+    <header className='header'>
       <Link to='/' className='header__item header__item--logo'>
         <img src={Logo} alt='' />
       </Link>
-      <MenuResponsive open={open} setOpen={setOpen} responsive={useCurrentWitdh() < 992} />
-      <Bg open={open} setOpen={setOpen} responsive={useCurrentWitdh() < 992} />
-      <Menu open={open} setOpen={setOpen} responsive={useCurrentWitdh() < 992} />
+      <BurgerIcon open={open} setOpen={setOpen} responsive={width} />
+      <Bg open={open} setOpen={setOpen} responsive={width} />
+      <Menu open={open} setOpen={setOpen} responsive={width} />
     </header>
   );
 };

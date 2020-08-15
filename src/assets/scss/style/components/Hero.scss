@@ -8,13 +8,25 @@
   justify-content: center;
   margin-bottom: rem(50);
   padding-bottom: var(--header);
+  @include break(md-mw) {
+    min-height: 100vh;
+    height: auto;
+  }
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: rem(30);
+    @include break(md-mw) {
+      grid-template-rows: repeat(3, auto);
+    }
   }
   &__image {
-    grid-area: 1 / 2 / 1 /7;
+    grid-column-start: 2;
+    grid-column-end: 7;
+    @include break(md-mw) {
+      grid-column-start: 1;
+      grid-column-end: 13;
+    }
     img {
       width: 100%;
       display: block;
@@ -25,16 +37,35 @@
     }
   }
   &__info {
-    grid-area: 1 / 6 / 1 / 12;
+    grid-column-start: 6;
+    grid-column-end: 12;
+    @include break(md-mw) {
+      grid-column-start: 2;
+      // grid-column-end: 12;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include break(md-mw) {
+      // grid-area: 2 / 2 / 2 / 12;
+      display: block;
+    }
   }
   &__name {
     font-size: rem(130);
-    line-height: .9;
+    line-height: 0.9;
     margin: 0;
     margin-bottom: rem(30);
+    @include break(xl-mw) {
+      font-size: rem(100);
+      margin-bottom: rem(20);
+    }
+    @include break(lg-mw) {
+      font-size: rem(80);
+      margin-bottom: rem(15);
+    }
     &.placeholder--child {
       width: 80%;
       height: 10rem;
@@ -47,11 +78,23 @@
     font-size: rem(50);
     margin: 0;
     margin-bottom: rem(50);
+    @include break(xl-mw) {
+      font-size: rem(36);
+    }
+    @include break(lg-mw) {
+      font-size: rem(30);
+      margin-bottom: 0;
+    }
     &.placeholder--child {
       width: 70%;
       height: rem(60);
       background: var(--primario900);
       margin-bottom: rem(30);
+    }
+  }
+  &__btns {
+    @include break(lg-mw) {
+      display: none;
     }
   }
   &__btn {
