@@ -5,12 +5,19 @@
     display: flex;
     justify-content: center;
     padding: rem(20) 0;
+    @include break(sm-mw) {
+      flex-wrap: wrap;
+    }
   }
   &__red {
     width: rem(50);
     height: rem(50);
     margin: rem(15);
     @include transicion;
+    @include break(sm-mw) {
+      width: rem(30);
+      height: rem(30);
+    }
     &--placeholder {
       background: blanco(.2);
       border-radius: 50%;

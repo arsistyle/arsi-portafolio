@@ -9,23 +9,35 @@
   margin-bottom: rem(50);
   padding-bottom: var(--header);
   @include break(md-mw) {
-    min-height: 100vh;
+    min-height: 600px;
     height: auto;
+    margin-bottom: 0;
+  }
+  @include break(sm-mw) {
+    min-height: auto;
   }
   &__container {
+    width: 100%;
+    max-width: var(--frame);
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: rem(30);
-    @include break(md-mw) {
-      grid-template-rows: repeat(3, auto);
+    @include break(sm-mw) {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1 1;
     }
   }
   &__image {
-    grid-column-start: 2;
-    grid-column-end: 7;
-    @include break(md-mw) {
-      grid-column-start: 1;
-      grid-column-end: 13;
+    grid-area: 1 / 2 / 1 / 7;
+    @include break(lg-mw) {
+      grid-area: 1 / 1 / 1 / 7;
+      padding-left: rem(20);
+    }
+    @include break(sm-mw) {
+      grid-area: 1 / 1 / 2 / 13;
+      padding-left: 0;
+      max-height: 40vh;
+      overflow: hidden;
     }
     img {
       width: 100%;
@@ -37,18 +49,15 @@
     }
   }
   &__info {
-    grid-column-start: 6;
-    grid-column-end: 12;
-    @include break(md-mw) {
-      grid-column-start: 2;
-      // grid-column-end: 12;
-      grid-row-start: 2;
-      grid-row-end: 3;
+    grid-area: 1 / 6 / 1 / 12;
+    @include break(sm-mw) {
+      text-align: center;
+      grid-area: 2 / 1 / 3 / 13;
     }
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @include break(md-mw) {
+    @include break(sm-mw) {
       // grid-area: 2 / 2 / 2 / 12;
       display: block;
     }
@@ -63,8 +72,11 @@
       margin-bottom: rem(20);
     }
     @include break(lg-mw) {
-      font-size: rem(80);
+      font-size: rem(70);
       margin-bottom: rem(15);
+    }
+    @include break(sm-mw) {
+      font-size: rem(50);
     }
     &.placeholder--child {
       width: 80%;
@@ -83,7 +95,10 @@
     }
     @include break(lg-mw) {
       font-size: rem(30);
-      margin-bottom: 0;
+      margin-bottom: rem(20);
+    }
+    @include break(sm-mw) {
+      font-size: rem(24);
     }
     &.placeholder--child {
       width: 70%;
@@ -92,11 +107,11 @@
       margin-bottom: rem(30);
     }
   }
-  &__btns {
-    @include break(lg-mw) {
-      display: none;
-    }
-  }
+  // &__btns {
+  //   @include break(lg-mw) {
+  //     display: none;
+  //   }
+  // }
   &__btn {
     display: inline-flex;
     border-radius: 6px;

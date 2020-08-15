@@ -5,6 +5,9 @@
   }
   &--contact {
     padding: rem(100) rem(15);
+    @include break(sm-mw) {
+      padding: rem(30);
+    }
     h2 {
       font-size: rem(70);
       margin-top: 0;

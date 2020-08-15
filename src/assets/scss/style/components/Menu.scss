@@ -48,7 +48,7 @@
   @include posicion(fixed,0,0,0,null);
   background: blanco(1);
   width: 100%;
-  max-width: 360px;
+  max-width: 300px;
   padding: rem(30);
   padding-top: calc(var(--header) + #{rem(30)});
   box-shadow: -10px 0 20px negro(.1);

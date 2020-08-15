@@ -50,6 +50,19 @@
   margin: auto;
 }
 
+.bg {
+  @include posicion(fixed, 0, 0, 0, 0);
+  background: rgba(gris(20), 0.8);
+  opacity: 0;
+  visibility: hidden;
+  @include transicion;
+  height: 100vh;
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .lazyload-wrapper {
   display: flex;
 }

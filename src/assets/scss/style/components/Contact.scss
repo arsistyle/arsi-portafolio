@@ -5,5 +5,15 @@
     display: grid;
     column-gap: rem(30);
     grid-template-columns: repeat(3, 1fr);
+    @include break(md-mw) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include break(sm-mw) {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+  &__content {
+    margin-bottom: rem(50);
   }
 }

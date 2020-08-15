@@ -8,6 +8,12 @@
     box-shadow: 0 -10vw 20px -10vw negro(0.2);
     min-height: 90vh;
     border-radius: rem(10);
+    @include break(md-mw) {
+      padding: rem(30);
+    }
+    @include break(sm-mw) {
+      padding: rem(15) 0;
+    }
     &__header {
       h1 {
         margin-top: 0.25em;
@@ -17,6 +23,14 @@
     &__overlap {
       margin-left: calc(-2 * var(--contentPadding));
       margin-right: calc(-2 * var(--contentPadding));
+      @include break(md-mw) {
+        margin-right: calc(-1 * #{rem(30)});
+        margin-left: calc(-1 * #{rem(30)});
+      }
+      @include break(sm-mw) {
+        margin-right: calc(-1 * #{rem(15)});
+        margin-left: calc(-1 * #{rem(15)});
+      }
     }
   }
   &__title {

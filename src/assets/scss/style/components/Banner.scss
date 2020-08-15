@@ -6,6 +6,15 @@
   background-repeat: repeat;
   height: 40vh;
   margin-bottom: -25vh;
+  overflow: hidden;
+  @include break(md-mw) {
+    height: rem(250);
+    margin-bottom: rem(-125);
+  }
+  @include break(md-mw) {
+    height: rem(100);
+    margin-bottom: 0;
+  }
   &--animated {
     animation: banner 20s linear infinite forwards;
   }

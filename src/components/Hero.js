@@ -22,7 +22,6 @@ const Hero = () => {
 
   return (
     <section className='hero' id='inicio'>
-      <div className='frame'>
         {loading ? (
           <div className='hero__container'>
             <div className='hero__image placeholder--child'></div>
@@ -54,7 +53,6 @@ const Hero = () => {
             </div>
           </div>
         )}
-      </div>
     </section>
   );
 };
