@@ -3,7 +3,7 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 import { getMenu } from '../services';
 import Pages from '../components/Pages';
 import Home from '../components/Pages--home';
-import Projects from '../components/ProjectsList';
+import Projects from '../components/Projects--List';
 import Project from '../components/Project';
 import Resume from '../components/Resume';
 import Contact from '../components/Contact';

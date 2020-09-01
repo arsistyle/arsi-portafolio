@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-// import withReactContent from 'sweetalert2-react-content';
 import { postContact } from '../services';
 
 import '../assets/scss/style/components/Contact.scss';
@@ -53,28 +52,58 @@ const Contact = ({ content }) => {
               <form className='form' onSubmit={handleSubmit(onSubmit)}>
                 <section className='form__content'>
                   <div className='form__item'>
-                    <input className={`form__text ${errors.nombre && 'invalid'}`} type='text' name='nombre' id='nombre' ref={register({ required: true })} />
+                    <input
+                      className={`form__text ${errors.nombre && 'invalid'}`}
+                      type='text'
+                      name='nombre'
+                      id='nombre'
+                      ref={register({ required: true })}
+                    />
                     <label htmlFor='nombre' className='form__label'>
                       Nombre
                     </label>
-                    {errors.nombre && <div className='form__alert form__alert--error'>Campo requerido</div>}
+                    {errors.nombre && (
+                      <div className='form__alert form__alert--error'>Campo requerido</div>
+                    )}
                   </div>
                   <div className='form__item'>
-                    <input className={`form__text ${errors.email && 'invalid'}`} type='email' name='email' id='email' ref={register({ required: true })} />
+                    <input
+                      className={`form__text ${errors.email && 'invalid'}`}
+                      type='email'
+                      name='email'
+                      id='email'
+                      ref={register({ required: true })}
+                    />
                     <label htmlFor='email' className='form__label'>
                       Email
                     </label>
-                    {errors.email && <div className='form__alert form__alert--error'>Campo requerido</div>}
+                    {errors.email && (
+                      <div className='form__alert form__alert--error'>Campo requerido</div>
+                    )}
                   </div>
                   <div className='form__item'>
-                    <textarea className={`form__text ${errors.mensaje && 'invalid'}`} name='mensaje' id='mensaje' cols='20' rows='5' ref={register({ required: true })}></textarea>
+                    <textarea
+                      className={`form__text ${errors.mensaje && 'invalid'}`}
+                      name='mensaje'
+                      id='mensaje'
+                      cols='20'
+                      rows='5'
+                      ref={register({ required: true })}></textarea>
                     <label htmlFor='mensaje' className='form__label'>
                       Mensaje
                     </label>
-                    {errors.mensaje && <div className='form__alert form__alert--error'>Campo requerido</div>}
+                    {errors.mensaje && (
+                      <div className='form__alert form__alert--error'>Campo requerido</div>
+                    )}
                   </div>
                 </section>
-                <footer className='form__footer text-align-right-xs'>{enviando ? <div className='form__preloader'></div> : <button className='btn btn--primario'>Enviar</button>}</footer>
+                <footer className='form__footer text-align-right-xs'>
+                  {enviando ? (
+                    <div className='form__preloader'></div>
+                  ) : (
+                    <button className='btn btn--primario'>Enviar</button>
+                  )}
+                </footer>
               </form>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Image from './Image';
 import LazyLoad from 'react-lazyload';
 import { getProjects } from '../services';
 import Filter from './Filter';
@@ -52,7 +53,11 @@ const Projects = (props) => {
           <LazyLoad placeholder={<PlaceholderProject />} throttle={3000} key={i}>
             <Link to={item.path} className={`projects__item ${filter && `projects__item--filter`}`}>
               <div className='projects__image'>
-                <img src={item.thumbnail} alt={item.name} />
+                <Image
+                  src={item.portada}
+                  alt={item.name}
+                  backgroundColor={item.portada_color_dominante}
+                />
               </div>
               <div className='projects__info'>
                 <h3 className='projects__title'>{item.title}</h3>

@@ -4,6 +4,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { getProject } from '../services';
 import Banner from '../components/Banner';
 import { SectionContact } from '../components/Sections';
+import Image from './Image';
 import Breadcrumb from '../components/Breadcrumbs';
 import LazyLoad from 'react-lazyload';
 
@@ -63,7 +64,7 @@ const Project = () => {
                       <h3 className='project__shots__title'>{x.title}</h3>
                       <p className='project__shots__caption'>{x.caption}</p>
                       <div className='project__shots__image'>
-                        <img src={x.shot} alt={x.title} />
+                        <Image src={x.shot.url} alt={x.title} />
                       </div>
                     </div>
                   </LazyLoad>

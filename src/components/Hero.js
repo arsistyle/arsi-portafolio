@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link as Ancla } from 'react-scroll';
 import { Link } from 'react-router-dom';
 import { getHero } from '../services';
+import Image from './Image';
 import '../assets/scss/style/components/Hero.scss';
 
 const Hero = () => {
@@ -37,7 +38,7 @@ const Hero = () => {
         ) : (
           <div className='hero__container'>
             <div className='hero__image'>
-              <img src={hero.avatar} alt={hero.name} />
+              <Image src={hero.avatar.url} alt={hero.name} />
             </div>
             <div className='hero__info'>
               <h1 className='hero__name'>{hero.name}</h1>

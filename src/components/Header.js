@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCurrentWitdh } from '../Hooks';
+import Image from './Image';
 import Menu, { BurgerIcon } from './Menu';
 import Bg from './Bg';
 import Logo from '../assets/img/logo.svg';
@@ -16,7 +17,7 @@ const Header = () => {
   return (
     <header className='header'>
       <Link to='/' className='header__item header__item--logo'>
-        <img src={Logo} alt='' />
+        <Image src={Logo} alt={process.env.REACT_APP_TITLE} />
       </Link>
       <BurgerIcon open={open} setOpen={setOpen} responsive={width} />
       <Bg open={open} setOpen={setOpen} responsive={width} />

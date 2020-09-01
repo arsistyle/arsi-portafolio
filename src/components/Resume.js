@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from './Image';
 import imgDescarga from '../assets/img/cv-pdf.svg';
 
 import '../assets/scss/style/components/Resume.scss';
@@ -9,7 +10,7 @@ const Resume = ({ page }) => {
     <div className='resume'>
       <header className='resume__header'>
         <div className='resume__header__image'>
-          <img src={avatar} alt={name} />
+          <Image src={avatar.url} alt={name} />
         </div>
         <div className='resume__header__info'>
           <div className='resume__header__name'>{name}</div>

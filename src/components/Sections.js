@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import ProjectsList from './ProjectsList';
+import ProjectsList from './Projects--List';
 
 import pattern from '../assets/img/pattern-contactme.png';
 
