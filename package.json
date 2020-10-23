@@ -3,19 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "@typescript-eslint/parser": "^4.0.0",
+    "babel-eslint": "^10.0.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-lazyload": "^3.1.0",
+    "react-refresh": "^0.9.0",
+    "react-scripts": "^4.0.0",
+    "swiper": "^6.3.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,15 +46,14 @@
     ]
   },
   "devDependencies": {
-    "react-hook-form": "^6.3.0",
-    "react-icons": "^3.10.0",
-    "react-lazyload": "^3.0.0",
+    "react-hook-form": "^6.9.5",
+    "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
-    "react-scroll": "^1.7.16",
+    "react-scroll": "^1.8.1",
     "react-scrollspy-nav": "^1.2.4",
-    "styled-components": "^5.1.0",
-    "sweetalert2": "^9.17.1",
-    "sweetalert2-react-content": "^3.0.3",
+    "styled-components": "^5.2.0",
+    "sweetalert2": "^10.8.1",
+    "sweetalert2-react-content": "^3.2.1",
     "wpapi": "^1.2.1"
   }
 }

@@ -1,4 +1,4 @@
-@import '../style';
+@import '../helpers.scss';
 .section {
   &--projects {
     margin-bottom: rem(100);
@@ -18,7 +18,7 @@
         font-size: rem(30);
       }
     }
-    animation: contact 20s linear infinite forwards;
+    animation: contact 90s linear infinite forwards;
   }
   &__contact {
     padding: 10vw;

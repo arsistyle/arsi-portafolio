@@ -82,7 +82,6 @@ export const BurgerIcon = ({ open, setOpen, responsive }) => {
   const [currentWidth, setCurrentWidth] = useState(false);
   useEffect(() => {
     responsive ? setCurrentWidth(true) : setCurrentWidth(false);
-    console.log(currentWidth);
   }, [currentWidth, responsive]);
   return (
     currentWidth && (

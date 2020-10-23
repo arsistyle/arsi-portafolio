@@ -1,4 +1,4 @@
-@import '../style';
+@import '../helpers.scss';
 .header {
   @include posicion(sticky, 0, 0, null, 0);
   display: flex;

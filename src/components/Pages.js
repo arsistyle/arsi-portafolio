@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io';
 import { getPage } from '../services';
+import { HTML } from '../functions';
 import Banner from '../components/Banner';
 import { SectionContact } from '../components/Sections';
 import Breadcrumb from '../components/Breadcrumbs';
@@ -42,12 +43,20 @@ const Pages = (props) => {
             <header className='page__content__header'>
               <Breadcrumb separator={<IoIosArrowForward />}>
                 {options.items.map(({ to, label, active }) => {
-                  return <Link className={`breadcrumbs__link ${active && `breadcrumbs__link--active`}`} key={to} to={to} dangerouslySetInnerHTML={{ __html: label }}></Link>;
+                  return (
+                    <Link
+                      className={`breadcrumbs__link ${active && `breadcrumbs__link--active`}`}
+                      key={to}
+                      to={to}>
+                      {HTML(label)}
+                    </Link>
+                  );
                 })}
               </Breadcrumb>
-              <h1>{page.title}</h1>
+              <h1>{HTML(page.title)}</h1>
             </header>
-            <section className={`page__content__inside ${page.acf.overlap && 'page__content__overlap'}`}>
+            <section
+              className={`page__content__inside ${page.acf.overlap && 'page__content__overlap'}`}>
               <Component {...extras} page={page} content={page.content.rendered} />
             </section>
           </div>

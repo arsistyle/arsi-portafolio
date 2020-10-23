@@ -73,11 +73,11 @@
   0%,
   50%,
   100% {
-    opacity: 0.75;
+    opacity: 0.5;
   }
   25%,
   75% {
-    opacity: 0.2;
+    opacity: 0.3;
   }
 }
 
@@ -95,6 +95,7 @@
     transform: scale(1.1);
     visibility: hidden;
     display: block;
+    width: 100%;
   }
   &--loaded {
     img {

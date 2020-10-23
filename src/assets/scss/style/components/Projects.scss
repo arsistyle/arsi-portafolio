@@ -80,7 +80,7 @@
       }
     }
     .image {
-      @include posicion(absolute,0,0,0,0);
+      @include posicion(absolute, 0, 0, 0, 0);
       @include transicion;
     }
     img {

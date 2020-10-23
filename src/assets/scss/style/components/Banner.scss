@@ -1,4 +1,4 @@
-@import '../style.scss';
+@import '../helpers.scss';
 .banner {
   background-attachment: fixed;
   background-position: center center;
@@ -16,7 +16,7 @@
     margin-bottom: 0;
   }
   &--animated {
-    animation: banner 20s linear infinite forwards;
+    animation: banner 90s linear infinite forwards;
   }
   &--placeholder {
     background: var(--primario900);

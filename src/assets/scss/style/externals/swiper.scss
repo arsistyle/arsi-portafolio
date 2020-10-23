@@ -1,0 +1,20 @@
+@import '../helpers';
+
+.swiper {
+  &-container {
+    padding-bottom: 30px;
+  }
+  &-pagination {
+    @include posicion(absolute,null,0,null,0 !important);
+    margin: auto;
+    transform: none !important;
+    &-bullet {
+      width: 8px;
+      height: 8px;
+      margin: 6px 2px;
+      border-radius: 50%;
+      background: var(--primario);
+      @include transicion;
+    }
+  }
+}

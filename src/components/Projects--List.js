@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Image from './Image';
 import LazyLoad from 'react-lazyload';
+import { HTML } from '../functions';
 import { getProjects } from '../services';
+import Image from './Image';
 import Filter from './Filter';
 
 import '../assets/scss/style/components/Projects.scss';
@@ -60,7 +61,7 @@ const Projects = (props) => {
                 />
               </div>
               <div className='projects__info'>
-                <h3 className='projects__title'>{item.title}</h3>
+                <h3 className='projects__title'>{HTML(item.title)}</h3>
                 <div className='projects__tags'>
                   {item.categorias.map((x, i) => (
                     <span className='projects__tags__item' key={i}>

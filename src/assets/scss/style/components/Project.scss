@@ -1,4 +1,4 @@
-@import '../style.scss';
+@import '../helpers.scss';
 .project {
   &__content {
     position: relative;
@@ -45,6 +45,9 @@
     &__item {
       margin-bottom: rem(100);
       width: 100%;
+      @include break(md-mw) {
+        margin-bottom: rem(30);
+      }
     }
     &__title {
       margin-bottom: rem(20);
@@ -71,6 +74,22 @@
       &--placeholder {
         padding-bottom: 50%;
         background: var(--primario900);
+      }
+    }
+    &__gallery {
+      .rec-slider-container {
+        margin: 0;
+      }
+      &__dots {
+        display: flex;
+        justify-content: center;
+      }
+      &__dot {
+        width: rem(10);
+        height: rem(10);
+        border-radius: 50%;
+        background: negro(.2);
+        margin: rem(5);
       }
     }
   }
