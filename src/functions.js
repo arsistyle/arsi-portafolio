@@ -10,11 +10,16 @@ export const MILES = (numero, antecesor = '') => {
   return `${antecesor}${valor}`;
 };
 
-export const HTML = (data) => {
+export const HTML = (data, classname) => {
   if (data) {
     const txt = document.createElement('textarea');
     txt.innerHTML = data;
-    return txt.value;
+    return (
+      <span
+        className={classname}
+        dangerouslySetInnerHTML={{ __html: txt.value }}
+      ></span>
+    );
   }
 
   return;

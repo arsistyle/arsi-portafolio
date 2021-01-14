@@ -11,18 +11,19 @@ const Image = ({
   onClick,
 }) => {
   const { loaded } = useImage({ src });
-  return (
-    loaded && (
-      <div
-        className={`image ${loaded ? 'image--loaded' : ''} ${
-          className ? className : ''
-        }`}
-        style={{ backgroundColor: !loaded && backgroundColor }}
-      >
-        <img src={src} alt={alt} srcSet={srcset} sizes={sizes} />
-      </div>
-    )
-  );
+  return loaded ? (
+    <div
+      className={`image ${loaded ? 'image--loaded' : ''} ${
+        className ? className : ''
+      }`}
+      style={{ backgroundColor: !loaded && backgroundColor }}
+    >
+      <img src={src} alt={alt} srcSet={srcset} sizes={sizes} />
+    </div>
+  ) : (
+    <div className='image--placeholder placeholder--child'></div>
+  ); 
+  
 };
 
 export default Image;

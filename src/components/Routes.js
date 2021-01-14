@@ -7,6 +7,7 @@ import Projects from '../components/Projects--List';
 import Project from '../components/Project';
 import Resume from '../components/Resume';
 import Contact from '../components/Contact';
+import Shop from '../components/Shop';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ const COMPONENTES = {
   Home,
   Projects,
   Project,
+  Shop,
   Resume,
   Contact
 };

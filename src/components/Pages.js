@@ -14,22 +14,24 @@ const Pages = (props) => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState([]);
   const [extras] = useState({});
-  const options = {
-    items: [
-      { to: '/', label: 'Inicio' },
-      { to: '/proyectos', label: 'Proyectos', active: true },
-    ],
-  };
+  const [options, setOptions] = useState({})
   useEffect(() => {
     async function loadPage() {
       const response = await getPage(slug);
       if (response) {
+        // console.log(response[0]);
         setPage(response[0]);
         for (const key in page_extra) {
           const el = page_extra[key];
           extras[el.property] = el.value;
         }
         setLoading(false);
+        setOptions({
+          items: [
+            { to: '/', label: 'Inicio' },
+            { to: `/${slug}`, label: response[0].title, active: true },
+          ],
+        });
       }
     }
     loadPage();
@@ -42,7 +44,7 @@ const Pages = (props) => {
           <div className='page__content'>
             <header className='page__content__header'>
               <Breadcrumb separator={<IoIosArrowForward />}>
-                {options.items.map(({ to, label, active }) => {
+                {options?.items?.map(({ to, label, active }) => {
                   return (
                     <Link
                       className={`breadcrumbs__link ${active && `breadcrumbs__link--active`}`}

@@ -89,6 +89,8 @@
 
 .image {
   overflow: hidden;
+  background: var(--primario1000);
+  padding-bottom: 0;
   img {
     @include transicion;
     filter: blur(5px);

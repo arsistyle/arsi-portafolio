@@ -1,4 +1,6 @@
 import wpapi from 'wpapi';
+import WooCommerceRestApi from '@woocommerce/woocommerce-rest-api';
+import { Zoom } from 'swiper';
 const wp_base = process.env.REACT_APP_BASE_URL;
 
 const WP = new wpapi({
@@ -73,8 +75,6 @@ export async function getProjects(slug, total = 100, cat_slug) {
     params: ['categories', 'per_page', 'slug'],
   });
 
-  console.log(slug, cat_slug);
-
   try {
     let response;
     if (cat_slug) {
@@ -138,5 +138,24 @@ export async function postContact({ nombre, email, mensaje }) {
   } catch (e) {
     console.log(e);
     return e;
+  }
+}
+
+export async function getShop(items) {
+  const consumerKey = process.env.REACT_APP_SHOP_KEY;
+  const consumerSecret = process.env.REACT_APP_SHOP_SECRET;
+  const url = process.env.REACT_APP_SHOP_URL;
+
+  const WOO = new WooCommerceRestApi({
+    url,
+    consumerKey,
+    consumerSecret,
+    version: 'wc/v3',
+  });
+
+  try {
+    return WOO.get('products').then((x) => x.data.filter(x => x.status === 'publish'));
+  } catch (e) {
+    console.log(e);
   }
 }

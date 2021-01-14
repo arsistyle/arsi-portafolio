@@ -105,7 +105,7 @@ const Project = () => {
                         <div className='project__shots__image'>
                           <Image
                             src={x.shot.url}
-                            alt={HTML(x.title)}
+                            alt={x.title}
                             backgroundColor={x.backgroundColor}
                             zoom
                           />
