@@ -1,11 +1,23 @@
 import wpapi from 'wpapi';
 import WooCommerceRestApi from '@woocommerce/woocommerce-rest-api';
-import { Zoom } from 'swiper';
+// import { Zoom } from 'swiper';
 const wp_base = process.env.REACT_APP_BASE_URL;
 
 const WP = new wpapi({
   endpoint: wp_base,
 });
+
+export async function getGlobal() {
+  WP.global = WP.registerRoute('acf/v3/options', '/global/');
+  try {
+    const response = await WP.global()
+      .get()
+      .then((x) => x);
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 export async function getHeader() {
   WP.header = WP.registerRoute('acf/v3/options', '/header/');

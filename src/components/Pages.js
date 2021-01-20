@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io';
 import { getPage } from '../services';
 import { HTML } from '../functions';
+import Seo from './Seo';
 import Banner from '../components/Banner';
 import { SectionContact } from '../components/Sections';
 import Breadcrumb from '../components/Breadcrumbs';
@@ -14,7 +15,7 @@ const Pages = (props) => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState([]);
   const [extras] = useState({});
-  const [options, setOptions] = useState({})
+  const [options, setOptions] = useState({});
   useEffect(() => {
     async function loadPage() {
       const response = await getPage(slug);
@@ -38,6 +39,24 @@ const Pages = (props) => {
   }, [slug, page_extra, extras]);
   return !loading ? (
     <div className='page'>
+      <Seo
+        title={
+          page?.acf?.title
+            ? page.acf.title
+            : `Israel Larrondo | ${page.title}`
+        }
+        description={page?.acf?.description}
+        url={page.link.replace('//admin.', '//')}
+        og={{
+          title: page?.acf?.title
+            ? page.acf?.title
+            : `Israel Larrondo | ${page.title}`,
+          description: page?.acf?.description,
+          url: page.link.replace('//admin.', '//'),
+          type: page?.acf?.type,
+          image: page?.acf?.image,
+        }}
+      />
       <Banner img={page.thumbnail} animated={page.acf.bg_animated} />
       <div className='container-fluid'>
         <div className='frame'>
@@ -47,9 +66,12 @@ const Pages = (props) => {
                 {options?.items?.map(({ to, label, active }) => {
                   return (
                     <Link
-                      className={`breadcrumbs__link ${active && `breadcrumbs__link--active`}`}
+                      className={`breadcrumbs__link ${
+                        active && `breadcrumbs__link--active`
+                      }`}
                       key={to}
-                      to={to}>
+                      to={to}
+                    >
                       {HTML(label)}
                     </Link>
                   );
@@ -58,8 +80,15 @@ const Pages = (props) => {
               <h1>{HTML(page.title)}</h1>
             </header>
             <section
-              className={`page__content__inside ${page.acf.overlap && 'page__content__overlap'}`}>
-              <Component {...extras} page={page} content={page.content.rendered} />
+              className={`page__content__inside ${
+                page.acf.overlap && 'page__content__overlap'
+              }`}
+            >
+              <Component
+                {...extras}
+                page={page}
+                content={page.content.rendered}
+              />
             </section>
           </div>
         </div>

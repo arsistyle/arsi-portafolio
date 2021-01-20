@@ -38,12 +38,6 @@
         }
       }
     }
-    &.placeholder {
-      background: none;
-    }
-    @include break(md-mw) {
-    //   margin-bottom: rem(30);
-    }
     &--filter {
       animation: filter 400ms linear 1 forwards;
       transform-origin: top left;
@@ -54,6 +48,9 @@
     position: relative;
     padding-bottom: 100%;
     margin-bottom: rem(10);
+    &.placeholder--child {
+      background: var(--primario900);
+    }
     @include hover() {
       grid-area: 1 / 1;
       z-index: 0;
@@ -92,25 +89,22 @@
       @include posicion(absolute, 0, 0, null, null);
       z-index: 0;
     }
-    &.placeholder--child {
-      background: var(--primario1000);
-    }
   }
   &__title {
     margin: 0;
     margin-bottom: rem(10);
     font-size: rem(24);
-    @include break(md-mw) {
-      font-size: rem(18);
-    }
-    @include break(sm-mw) {
-      margin-bottom: 0;
-    }
     &.placeholder--child {
       background: var(--primario900);
       width: 80%;
       height: rem(30);
       margin-bottom: rem(15);
+    }
+    @include break(md-mw) {
+      font-size: rem(18);
+    }
+    @include break(sm-mw) {
+      margin-bottom: 0;
     }
   }
   &__desc {
