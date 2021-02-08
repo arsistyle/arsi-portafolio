@@ -27,7 +27,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "postbuild": "react-snap"
+    
   },
   "eslintConfig": {
     "extends": "react-app"
