@@ -55,7 +55,6 @@ const Routes = () => {
     async function loadRoutes() {
       const response = await getMenu('menu-routes');
       if (response) {
-        console.log(response);
         setRoutes(response.items);
         setLoading(false);
       }

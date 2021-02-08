@@ -21,7 +21,6 @@ const Pages = (props) => {
     async function loadPage() {
       const response = await getPage(slug);
       if (response) {
-        console.log(response[0]);
         setPage(response[0]);
         for (const key in page_extra) {
           const el = page_extra[key];
