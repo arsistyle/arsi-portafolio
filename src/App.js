@@ -19,6 +19,7 @@ function App() {
           <Routes />
         </section>
         <Footer />
+        <h1>Probando...</h1>
       </Router>
     </main>
   );
