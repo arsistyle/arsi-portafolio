@@ -13,7 +13,7 @@ const Menu = ({ open, setOpen, responsive }) => {
   useEffect(() => {
     async function loadMenu() {
       const response = await getMenu('menu-rest');
-      if (response.items) {
+      if (response) {
         setMenu(response);
         setLoading(false);
       }
