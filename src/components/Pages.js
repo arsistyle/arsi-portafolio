@@ -43,13 +43,13 @@ const Pages = (props) => {
         <Seo
           title={page.acf.title}
           description={page?.acf?.description}
-          url={page.link.replace('//admin.', '//')}
+          url={page.link.replace('//admin.', '//').replace('/inicio', '')}
           og={{
             title: page?.acf?.title
               ? page.acf?.title
               : `Israel Larrondo | ${page.title}`,
             description: page?.acf?.description,
-            url: page.link.replace('//admin.', '//'),
+            url: page.link.replace('//admin.', '//').replace('/inicio', ''),
             type: page?.acf?.type,
             image: page?.acf?.image,
           }}
