@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 const Seo = ({ title = null, url = null, description = null, og = {} }) => {
-  console.log({ title, url, description, og });
+  // console.log({ title, url, description, og });
 
   return (
     <Helmet>
