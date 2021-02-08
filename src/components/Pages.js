@@ -4,6 +4,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { getPage } from '../services';
 import { HTML } from '../functions';
 import Seo from './Seo';
+import Home from '../components/Pages--home';
 import Banner from '../components/Banner';
 import { SectionContact } from '../components/Sections';
 import Breadcrumb from '../components/Breadcrumbs';
@@ -20,7 +21,7 @@ const Pages = (props) => {
     async function loadPage() {
       const response = await getPage(slug);
       if (response) {
-        // console.log(response[0]);
+        console.log(response[0]);
         setPage(response[0]);
         for (const key in page_extra) {
           const el = page_extra[key];
@@ -37,13 +38,31 @@ const Pages = (props) => {
     }
     loadPage();
   }, [slug, page_extra, extras]);
-  return !loading ? (
+  return slug === 'inicio' ? (
+    !loading && (
+      <>
+        <Seo
+          title={page.acf.title}
+          description={page?.acf?.description}
+          url={page.link.replace('//admin.', '//')}
+          og={{
+            title: page?.acf?.title
+              ? page.acf?.title
+              : `Israel Larrondo | ${page.title}`,
+            description: page?.acf?.description,
+            url: page.link.replace('//admin.', '//'),
+            type: page?.acf?.type,
+            image: page?.acf?.image,
+          }}
+        />
+        <Home />
+      </>
+    )
+  ) : !loading ? (
     <div className='page'>
       <Seo
         title={
-          page?.acf?.title
-            ? page.acf.title
-            : `Israel Larrondo | ${page.title}`
+          page?.acf?.title ? page.acf.title : `Israel Larrondo | ${page.title}`
         }
         description={page?.acf?.description}
         url={page.link.replace('//admin.', '//')}

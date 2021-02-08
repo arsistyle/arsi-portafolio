@@ -52,6 +52,7 @@
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.8.1",
     "react-scrollspy-nav": "^1.2.4",
+    "react-snap": "^1.23.0",
     "styled-components": "^5.2.0",
     "sweetalert2": "^10.8.1",
     "sweetalert2-react-content": "^3.2.1",

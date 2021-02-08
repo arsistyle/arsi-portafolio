@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { getMenu } from '../services';
 import Pages from '../components/Pages';
-import Home from '../components/Pages--home';
 import Projects from '../components/Projects--List';
 import Project from '../components/Project';
 import Resume from '../components/Resume';
@@ -20,7 +19,7 @@ function ScrollToTop() {
 }
 
 const COMPONENTES = {
-  Home,
+  // Home,
   Projects,
   Project,
   Shop,
@@ -56,6 +55,7 @@ const Routes = () => {
     async function loadRoutes() {
       const response = await getMenu('menu-routes');
       if (response) {
+        console.log(response);
         setRoutes(response.items);
         setLoading(false);
       }
